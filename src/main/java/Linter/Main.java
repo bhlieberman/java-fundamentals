@@ -1,11 +1,8 @@
 package Linter;
 
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,10 +33,10 @@ public class Main {
         }
         setAll.removeAll(setMin);
         var outString = new StringBuilder();
-        outString.append("High: " + max + "\n");
-        outString.append("Low: " + min + "\n");
+        outString.append("High: ").append(max).append("\n");
+        outString.append("Low: ").append(min).append("\n");
         for (Object i : setAll) {
-            outString.append("Never saw temperature: " + i + "\n");
+            outString.append("Never saw temperature: ").append(i).append("\n");
         }
         return outString.toString();
 

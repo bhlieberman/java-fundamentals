@@ -1,7 +1,6 @@
 package Linter;
 
-import java.util.HashSet;
-import java.util.Arrays;
+import java.util.*;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -15,7 +14,7 @@ public class Main {
         System.out.println(weather(forecast));
     }
 
-    private static String weather(int[][] forecast) {
+    public static String weather(int[][] forecast) {
         var nums = Arrays.stream(forecast)
                 .flatMapToInt(Arrays::stream)
                 .distinct()
@@ -32,13 +31,12 @@ public class Main {
             setMin.add(nums.next());
         }
         setAll.removeAll(setMin);
-        var outString = new StringBuilder();
-        outString.append("High: ").append(max).append("\n");
-        outString.append("Low: ").append(min).append("\n");
+        var outStringBuilder = new StringBuilder();
+        outStringBuilder.append("High: ").append(max).append("\n");
+        outStringBuilder.append("Low: ").append(min).append("\n");
         for (Object i : setAll) {
-            outString.append("Never saw temperature: ").append(i).append("\n");
+            outStringBuilder.append("Never saw temperature: ").append(i).append("\n");
         }
-        return outString.toString();
-
+        return outStringBuilder.toString();
     }
 }

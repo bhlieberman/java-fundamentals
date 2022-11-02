@@ -2,12 +2,12 @@ package Inheritance;
 
 public class Review {
     public String body;
-    public String restaurantName;
+    public String businessName;
     public String author;
     public int stars;
-    public Review(String restaurantName, String body, String author, int stars) {
+    public Review(String businessName, String body, String author, int stars) {
         this.body = body;
-        this.restaurantName = restaurantName;
+        this.businessName = businessName;
         this.author = author;
         this.stars = stars;
     }
